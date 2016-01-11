@@ -81,7 +81,7 @@ class GatewayController
             $this->gatewayConfigStorage->update($gatewayConfig);
 
             $getUrl = $this->urlGenerator->generate('gateway_get',
-                array('name' => $gatewayConfig->getGatewayName()),
+                array('name' => htmlspecialchars($gatewayConfig->getGatewayName())),
                 $absolute = true
             );
 
